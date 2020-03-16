@@ -7,7 +7,7 @@
  * Author: Esmond Mccain
  * Author URI: https://esmondmccain.com
 
-    @category Wordpress-plugin
+    @category Wordpress_Plugin
     @package  Esmond-M
     @author   Esmond Mccain <esmondmccain@gmail.com>
     @license  https://www.gnu.org/licenses/gpl-3.0.en.html GNU General Public License
