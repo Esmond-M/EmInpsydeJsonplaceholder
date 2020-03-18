@@ -21,7 +21,7 @@ if (!class_exists('EM_Inpsyde_Jsonplaceholder')) {
         private function __construct()
         {
             add_filter('the_content', array($this, 'emCustomEndpointUrl'));
-            add_action('wp_enqueue_scripts', array($this, 'emInpsydeJsonplaceholderScripts'));
+            add_action('wp_enqueue_scripts', array($this, 'emInpsydeJsonScripts'));
         }
         /**
         Declaring function for class instance
@@ -47,19 +47,25 @@ if (!class_exists('EM_Inpsyde_Jsonplaceholder')) {
             $get_inpsyde_api = $_GET['inpsyde-api'];
             if (isset($get_inpsyde_api)) {
                 ?>
-
-                <input id="btn-load-json" type="button" value="Render JSON" id="Render JSON" />
+                <p id="jsonTable-ld-top"
+                   style="visibility:hidden;padding-bottom: 4rem;"></p>
+                <div class="em-jsonTable-wrapper">
+                <hr>
                 <br/>
                 <table id="jsonTable" style="visibility:hidden">
                     <thead>
                     <tr>
-                        <!-- The JSON downloaded from the URL above provides four attributes.-->
+                        <th  colspan="3" style="color: red;text-align: center;">
+                            Main Users table</th>
+                    </tr>
+                    <tr>
                         <th>id</th>
                         <th>name</th>
                         <th>username</th>
                     </tr>
                     </thead>
                 </table>
+                </div>
                 <?php
             }
         }
@@ -69,10 +75,13 @@ if (!class_exists('EM_Inpsyde_Jsonplaceholder')) {
 
         @return void
          */
-        public function emInpsydeJsonplaceholderScripts()
+        public function emInpsydeJsonScripts()
         {
             $rand = rand(1, 99999999999);
-            wp_enqueue_script('em-Inpsyde-Jsonplaceholder-Scripts', plugin_dir_url(__FILE__) . 'lib/general.js', array('jquery'), $rand, true);
+            wp_enqueue_script('em-Inpsyde-Jsonplaceholder-Scripts', plugin_dir_url(__FILE__)
+                . 'assets/general.js', array('jquery'), $rand, true
+            );
+            wp_enqueue_style('em-Inpsyde-Jsonplaceholder-Styles', plugin_dir_url(__FILE__) . 'assets/style.css', array(), $rand);
         }
     }
     EM_Inpsyde_Jsonplaceholder::instance();
