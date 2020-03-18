@@ -78,10 +78,14 @@ if (!class_exists('EM_Inpsyde_Jsonplaceholder')) {
         public function emInpsydeJsonScripts()
         {
             $rand = rand(1, 99999999999);
-            wp_enqueue_script('em-Inpsyde-Jsonplaceholder-Scripts', plugin_dir_url(__FILE__)
+            wp_enqueue_script(
+                'em-Inpsyde-Jsonplaceholder-Scripts', plugin_dir_url(__FILE__)
                 . 'assets/general.js', array('jquery'), $rand, true
             );
-            wp_enqueue_style('em-Inpsyde-Jsonplaceholder-Styles', plugin_dir_url(__FILE__) . 'assets/style.css', array(), $rand);
+            wp_enqueue_style(
+                'em-Inpsyde-Jsonplaceholder-Styles', plugin_dir_url(__FILE__)
+                . 'assets/style.css', array(), $rand
+            );
         }
     }
     EM_Inpsyde_Jsonplaceholder::instance();
