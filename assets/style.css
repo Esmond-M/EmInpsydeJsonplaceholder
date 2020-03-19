@@ -55,3 +55,8 @@ h2.em-json-user-name {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
+.em-json-error-msg {
+    background: white;
+    color: red;
+    padding: 10px;
+}
