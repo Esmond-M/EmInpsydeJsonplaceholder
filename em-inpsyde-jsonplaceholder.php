@@ -2,7 +2,9 @@
 /**
  * Plugin Name: EM-inpsyde-jsonplaceholder
  * Plugin URI: https://esmondmccain.com
- * Description: Loads a html table using the  REST API of https://jsonplaceholder.typicode.com/. To test add a query string of "?inpsyde-api" to the end of a url.
+ * Description: Loads a html table using the REST API
+ * of https://jsonplaceholder.typicode.com/. To test add a query
+ * string of "?inpsyde-api" to the end of a url.
  * Version: 1.0
  * Author: Esmond Mccain
  * Author URI: https://esmondmccain.com
@@ -16,6 +18,4 @@
  */
 defined('ABSPATH') or die();
 
-require plugin_dir_path(__FILE__) . 'functions.php';
-
-
+require plugin_dir_path(__FILE__) . 'EmInpsydeJsonplaceholder.php';
