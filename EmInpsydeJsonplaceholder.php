@@ -1,5 +1,6 @@
 <?php
 declare(strict_types=1);
+
 namespace EmInpsydeJsonplaceholder;
 
 if (!class_exists('EmInpsydeJsonplaceholder')) {
@@ -16,11 +17,11 @@ if (!class_exists('EmInpsydeJsonplaceholder')) {
 
     class EmInpsydeJsonplaceholder
     {
-        private static $instance;
+        
         /**
         Declaring constructor
          */
-        private function __construct()
+        public function __construct()
         {
             add_filter(
                 'the_content',
@@ -30,19 +31,6 @@ if (!class_exists('EmInpsydeJsonplaceholder')) {
                 'wp_enqueue_scripts',
                 [$this, 'emInpsydeJsonScripts']
             );
-        }
-        /**
-        Declaring function for class instance
-
-        @return self
-         */
-        public static function instance() : self
-        {
-            if (!isset(self::$instance)) {
-                $className = __CLASS__;
-                self::$instance = new $className;
-            }
-            return self::$instance;
         }
 
         /**
@@ -103,6 +91,6 @@ if (!class_exists('EmInpsydeJsonplaceholder')) {
             );
         }
     }
-    EmInpsydeJsonplaceholder::instance();
+
 }
 

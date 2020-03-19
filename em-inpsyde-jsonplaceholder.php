@@ -1,4 +1,7 @@
 <?php
+declare(strict_types=1);
+namespace EmInpsydeJsonplaceholder;
+
 /**
  * Plugin Name: EmInpsydeJsonplaceholder
  * Plugin URI: https://esmondmccain.com
@@ -19,4 +22,8 @@
  */
 defined('ABSPATH') or die();
 
+
 require plugin_dir_path(__FILE__) . 'EmInpsydeJsonplaceholder.php';
+use EmInpsydeJsonplaceholder\EmInpsydeJsonplaceholder;
+
+new EmInpsydeJsonplaceholder;
