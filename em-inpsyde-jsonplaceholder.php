@@ -2,9 +2,10 @@
 /**
  * Plugin Name: EmInpsydeJsonplaceholder
  * Plugin URI: https://esmondmccain.com
- * Description: Loads a html table using the REST API
- * of https://jsonplaceholder.typicode.com/. To test add a query
- * string of "?inpsyde-endpoint" to the end of a url.
+ // phpcs:disable
+ // reason: Wordpress does not allow linebreak for descriptions
+ * Description: Loads a html table using the REST API of https://jsonplaceholder.typicode.com/. To test add a query string of "?inpsyde-endpoint" to the end of a url.
+ * // phpcs:enable
  * Version: 1.0
  * Author: Esmond Mccain
  * Author URI: https://esmondmccain.com
