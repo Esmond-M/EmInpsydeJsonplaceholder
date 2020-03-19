@@ -30,6 +30,9 @@ h2.em-json-user-name {
     border: black solid 1px;
     padding: 5px;
 }
+#jsonTable tr {
+    border: black solid 1px;
+}
 .em-jsonTable-loader {
     border: 16px solid #f3f3f3;
     border-radius: 50%;

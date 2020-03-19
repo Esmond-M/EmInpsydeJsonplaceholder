@@ -1,10 +1,10 @@
 <?php
 /**
- * Plugin Name: EM-inpsyde-jsonplaceholder
+ * Plugin Name: EmInpsydeJsonplaceholder
  * Plugin URI: https://esmondmccain.com
  * Description: Loads a html table using the REST API
  * of https://jsonplaceholder.typicode.com/. To test add a query
- * string of "?inpsyde-api" to the end of a url.
+ * string of "?inpsyde-endpoint" to the end of a url.
  * Version: 1.0
  * Author: Esmond Mccain
  * Author URI: https://esmondmccain.com
