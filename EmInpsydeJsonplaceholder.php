@@ -1,4 +1,16 @@
 <?php
+
+/**
+Class file.
+PHP version 7.3
+
+@category Wordpress_Plugin
+@package  Esmond-M
+@author   Esmond Mccain <esmondmccain@gmail.com>
+@license  https://www.gnu.org/licenses/gpl-3.0.en.html GNU General Public License
+@link     esmondmccain.com
+@return
+ */
 declare(strict_types=1);
 
 namespace EmInpsydeJsonplaceholder;
@@ -17,7 +29,7 @@ if (!class_exists('EmInpsydeJsonplaceholder')) {
 
     class EmInpsydeJsonplaceholder
     {
-        
+
         /**
         Declaring constructor
          */
@@ -40,7 +52,10 @@ if (!class_exists('EmInpsydeJsonplaceholder')) {
          */
         public function emCustomEndpointUrl()
         {
-            $inpsydeEndpoint = filter_input(INPUT_GET, 'inpsyde-endpoint', FILTER_VALIDATE_URL);
+            $inpsydeEndpoint = filter_input(
+                INPUT_GET,
+                'inpsyde-endpoint', FILTER_VALIDATE_URL
+            );
             if (isset($inpsydeEndpoint)) {
                 ?>
                 <p id="jsonTable-ld-top"
@@ -91,6 +106,5 @@ if (!class_exists('EmInpsydeJsonplaceholder')) {
             );
         }
     }
-
 }
 
