@@ -1,13 +1,13 @@
-jQuery(document).ready(function($) {
+jQuery(document).ready(function ($) {
     $('.em-jsonTable-wrapper').prepend().before('<div class="em-jsonTable-loader"></div>');
     $.ajax({
         url: 'https://jsonplaceholder.typicode.com/users',
         method: 'GET',
         cache: true,
         dataType: 'json',
-        success: function(result) {
+        success: function (result) {
             setTimeout(
-                function() {
+                function () {
                     $(".em-jsonTable-loader").remove();
                     $('#jsonTable').css("visibility", "visible");
                     $('#jsonTable').append("<tbody>");
@@ -15,13 +15,13 @@ jQuery(document).ready(function($) {
                         $('#jsonTable').append("<tr><td class='typicode_userid'><a href='#'>" + result[counter].id + "</a></td><td class='typicode_name'><a href='#'>" + result[counter].name + "</a></td><td class='typicode_username'><a href='#'>" + result[counter].username + "</a></td></tr>");
                     }
                     $('#jsonTable').append("</tbody>");
-                }, 3000);
-            setTimeout(function() {
-                $(".typicode_userid , .typicode_name , .typicode_username").on("click", function(event) {
+                },
+                3000
+            );
+            setTimeout(function () {
+                $(".typicode_userid , .typicode_name , .typicode_username").on("click", function (event) {
                     event.preventDefault();
-                    $([document.documentElement, document.body]).animate({
-                        scrollTop: $("#jsonTable-ld-top").offset().top
-                    }, );
+                    $([document.documentElement, document.body]).animate({scrollTop: $("#jsonTable-ld-top").offset().top},);
                     $(".em-jsonTable-loader").remove();
                     $(".em-json-user-wrapper").remove();
                     $('.em-jsonTable-wrapper').prepend().before('<div class="em-jsonTable-loader"></div>');
@@ -31,8 +31,8 @@ jQuery(document).ready(function($) {
                         method: 'GET',
                         cache: true,
                         dataType: 'json',
-                        success: function(result_indiv_user) {
-                            setTimeout(function() {
+                        success: function (result_indiv_user) {
+                            setTimeout(function () {
                                 $(".em-jsonTable-loader").remove();
                                 $('.em-jsonTable-wrapper').prepend().before(
                                     "<div class='em-json-user-wrapper'><h2 class='em-json-user-name'>User: " + result_indiv_user.name + "</h2><ul><li>Id: " + result_indiv_user.id + "</li><li>Name: " + result_indiv_user.name + "</li><li>Username: " + result_indiv_user.username + "</li>" +
@@ -42,13 +42,11 @@ jQuery(document).ready(function($) {
                                     "<li>Company catchphrase: " + result_indiv_user.company.catchPhrase + "</li><li>Company bs: " + result_indiv_user.company.bs + "</li></ul>" +
                                     "<p class='em-json-loadmore'>Load another user by click information on the table below.</p></div>"
                                 );
-                                $([document.documentElement, document.body]).animate({
-                                    scrollTop: $("#jsonTable-ld-top").offset().top
-                                }, );
+                                $([document.documentElement, document.body]).animate({scrollTop: $("#jsonTable-ld-top").offset().top},);
                             }, 3000);
 
                         },
-                        error: function() {
+                        error: function () {
                             console.log("error");
                         }
                     });
@@ -57,7 +55,7 @@ jQuery(document).ready(function($) {
             }, 3001);
 
         },
-        error: function() {
+        error: function () {
             console.log("error");
         }
     });
