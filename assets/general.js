@@ -1,6 +1,6 @@
 jQuery(document).ready(
     function ($) {
-        $('.em-jsonTable-wrapper').prepend().before('<div class="em-jsonTable-loader"></div>');
+        $('.em-jsonTable-wrapper').prepend().before('<div class="em-jsonTable-loader"></div>'); // initial loader icon for all users request
         $.ajax(
             {
                 url: 'https://jsonplaceholder.typicode.com/users',
@@ -8,7 +8,7 @@ jQuery(document).ready(
                 cache: true,
                 dataType: 'json',
                 success: function (result) {
-                    setTimeout(
+                    setTimeout( // timeout function to transition from loader icon to content less abruptly
                         function () {
                             $(".em-jsonTable-loader").remove();
                             $('#jsonTable').css("visibility", "visible");
@@ -20,7 +20,7 @@ jQuery(document).ready(
                         },
                         3000
                     );
-                    setTimeout(
+                    setTimeout( // timeout function to transition from loader icon to content less abruptly
                         function () {
                             $(".typicode_userid , .typicode_name , .typicode_username").on(
                                 "click", function (event) {
@@ -60,7 +60,8 @@ jQuery(document).ready(
 
                                             },
                                             error: function () {
-                                                setTimeout(
+                                                // error message for html table of all users
+                                                setTimeout( // timeout function to transition from loader icon to content less abruptly
                                                     function () {
                                                         $(".em-jsonTable-loader").remove();
                                                         $('.em-jsonTable-wrapper').prepend().before(
@@ -87,7 +88,8 @@ jQuery(document).ready(
 
                 },
                 error: function () {
-                    setTimeout(
+                    // error message for individual user request
+                    setTimeout( // timeout function to transition from loader icon to content less abruptly
                         function () {
                             $(".em-jsonTable-loader").remove();
                             $('.em-jsonTable-wrapper').prepend().before(
