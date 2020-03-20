@@ -52,7 +52,7 @@ if (!class_exists('EmInpsydeJsonplaceholder')) {
          */
         public function emCustomEndpointUrl()
         {
-            $inpsydeEndpoint = filter_input(
+            $inpsydeEndpoint = filter_input( // validated input var
                 INPUT_GET,
                 'inpsyde-endpoint', FILTER_VALIDATE_URL
             );
