@@ -25,6 +25,7 @@ jQuery(document).ready(
                             $(".typicode_userid , .typicode_name , .typicode_username").on(
                                 "click", function (event) {
                                     event.preventDefault();
+                                    $('#jsonTable').css("visibility", "hidden");
                                     $([document.documentElement, document.body]).animate({scrollTop: $("#jsonTable-ld-top").offset().top},);
                                     $(".em-jsonTable-loader").remove();
                                     $(".em-json-user-wrapper").remove();
@@ -54,13 +55,14 @@ jQuery(document).ready(
                                                             )
                                                             .offset().top},
                                                         );
+                                                        $('#jsonTable').css("visibility", "visible");
                                                     },
                                                     3000
                                                 );
 
                                             },
                                             error: function () {
-                                                // error message for html table of all users
+                                                // error message for individual user request
                                                 setTimeout( // timeout function to transition from loader icon to content less abruptly
                                                     function () {
                                                         $(".em-jsonTable-loader").remove();
@@ -73,6 +75,7 @@ jQuery(document).ready(
                                                             )
                                                                     .offset().top},
                                                         );
+                                                        $('#jsonTable').css("visibility", "visible");
                                                     },
                                                     3000
                                                 );
@@ -88,7 +91,7 @@ jQuery(document).ready(
 
                 },
                 error: function () {
-                    // error message for individual user request
+                    // error message for html table of all users
                     setTimeout( // timeout function to transition from loader icon to content less abruptly
                         function () {
                             $(".em-jsonTable-loader").remove();
