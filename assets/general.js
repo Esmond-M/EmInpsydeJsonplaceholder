@@ -20,7 +20,7 @@ jQuery(document).ready(
                         },
                         3000
                     );
-                    setTimeout( // timeout function to transition from loader icon to content less abruptly
+                    setTimeout( // wait for html table to load before targeting these elements
                         function () {
                             $(".typicode_userid , .typicode_name , .typicode_username").on(
                                 "click", function (event) {
@@ -37,7 +37,7 @@ jQuery(document).ready(
                                             cache: true,
                                             dataType: 'json',
                                             success: function (result_indiv_user) {
-                                                setTimeout(
+                                                setTimeout( // timeout function to transition from loader icon to content less abruptly
                                                     function () {
                                                         $(".em-jsonTable-loader").remove();
                                                         $('.em-jsonTable-wrapper').prepend().before(
