@@ -1,35 +1,46 @@
-* [Installation](#installation)
-    + [Requirements](#requirements)
-    + [Composer](#composer)
-    + [Unit Testing](#unit-testing)
-* [Plugin Usage](#plugin-usage)
-* [License](#license)
+* [Installation](#markdown-header-installation)
+    + [Requirements](#markdown-header-requirements)
+    + [Composer](#markdown-header-composer)
+    + [Unit Testing](#markdown-header-unit-testing)
+* [Plugin Usage](#markdown-header-plugin-usage)
+* [License](#markdown-header-license)
 
-## Installation
+Installation
+================================
+- - -
 Download the repository to your computer in ZIP form, then log in to your WP admin area and go to Plugins > Add New to upload the ZIP file and activate it.
 
-### Requirements
-
+Requirements
+================================
+- - -
 This plugin requires PHP 7 or higher.
 
-### Composer
-
+Composer
+================================
+- - -
 This project is compliant with [Inpsyde coding style](https://github.com/inpsyde/php-coding-standards) & uses PHPUnit 9 for unit testing. In order to have these resources properly included run the command below in the root directory of this plugin.
 
 ```
 $ composer update
 ```
 
-### Unit testing
+Unit testing
+================================
+- - -
 After running the composer command above refer to [this](https://www.jetbrains.com/help/phpstorm/using-phpunit-framework.html) documentation for unit testing using PHPUnit integration with PhpStorm. My phpunit.xml file is lcoated in the root directory of this plugin. The test class is located in the "tests" directory of this plugin.
 
-## Plugin Usage
-When installed, this plugin makes available a custom endpoint on the WordPress site. This endpoint can be accessed using the query string of "?inpsyde-endpoint". This endpoint hooks into the "the_content" filter of WordPress and loads a html table using the REST API of https://jsonplaceholder.typicode.com/. The table will start with three initial columns. Clicking on either one of the details in these columns will load the rest of that specific user’s details individually.
+Plugin Usage
+================================
+- - -
+When installed, this plugin makes available a custom endpoint on the WordPress site. This endpoint can be accessed using the query string of "?inpsyde-endpoint". This endpoint hooks into the "the_content" filter of WordPress and loads a html table using the REST API of https://jsonplaceholder.typicode.com/. The table will start with three initial columns. Clicking on either one of the details in these columns will load the rest of that specific user's details individually. Repeated requests of the same user will call upon your browsers local session storage to load information.
 
-# IDE integration
+IDE integration
+================================
+- - -
 
-## PhpStorm
-
+PhpStorm
+================================
+- - -
 After having installed the package as explained above in the _"Composer"_ section,
 open PhpStorm settings, and navigate to
 
@@ -55,6 +66,7 @@ If you do not see `Inpsyde` here, you may need to specify `phpcs.xml` file by se
 Now PhpStorm integration is complete, and errors in the code style will be shown in the IDE editor
 allowing to detect them without running any commands at all.
 
-## License
-
+License
+================================
+- - -
 See [LICENSE](LICENSE) (GNU General Public License).
