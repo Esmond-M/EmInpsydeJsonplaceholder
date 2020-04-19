@@ -21,7 +21,7 @@ $ composer update
 ```
 
 ### Unit testing
-After running the composer command above refer to [this](https://www.jetbrains.com/help/phpstorm/using-phpunit-framework.html) documentation for unit testing using PHPUnit integration with PhpStorm. My phpunit.xml file is lcoated in the root directory of this plugin. The test class is located in the "tests" directory of this plugin.
+After running the composer command above refer to [this](https://www.jetbrains.com/help/phpstorm/using-phpunit-framework.html) documentation for unit testing using PHPUnit integration with PhpStorm. My phpunit.xml file is located in the root directory of this plugin. The test class is located in the "tests" directory of this plugin.
 
 ## Plugin Usage
 When installed, this plugin makes available a custom endpoint on the WordPress site. This endpoint can be accessed using the query string of "?inpsyde-endpoint". This endpoint hooks into the "the_content" filter of WordPress and loads a html table using the REST API of https://jsonplaceholder.typicode.com/. The table will start with three initial columns. Clicking on either one of the details in these columns will load the rest of that specific user’s details individually.
