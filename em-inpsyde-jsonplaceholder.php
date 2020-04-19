@@ -26,9 +26,29 @@ namespace EmInpsydeJsonplaceholder;
  * Author URI: https://esmondmccain.com
  */
 defined('ABSPATH') or die();
+/**
+ * Define global constants
 
+ * @param $constant_name
+ * @param $value
+ *
+ * @return array
+ */
+function emInpsydeJsonplaceholderConstants($constant_name, $value)
+{
+    $constant_name_prefix = 'EM_Inpsyde_Jsonplaceholder_Constants_';
+    $constant_name = $constant_name_prefix . $constant_name;
+    if (!defined($constant_name))
+        define($constant_name, $value);
+}
+emInpsydeJsonplaceholderConstants('DIR', dirname(plugin_basename(__FILE__)));
+emInpsydeJsonplaceholderConstants('BASE', plugin_basename(__FILE__));
+emInpsydeJsonplaceholderConstants('URL', plugin_dir_url(__FILE__));
+emInpsydeJsonplaceholderConstants('PATH', plugin_dir_path(__FILE__));
+emInpsydeJsonplaceholderConstants('SLUG', dirname(plugin_basename(__FILE__)));
+require  EM_Inpsyde_Jsonplaceholder_Constants_PATH
+    . 'includes/classes/EmInpsydeJsonplaceholder.php';
 
-require plugin_dir_path(__FILE__) . 'EmInpsydeJsonplaceholder.php';
 use EmInpsydeJsonplaceholder\EmInpsydeJsonplaceholder;
 
 new EmInpsydeJsonplaceholder;

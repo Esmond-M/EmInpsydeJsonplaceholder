@@ -91,16 +91,16 @@ if (!class_exists('EmInpsydeJsonplaceholder')) {
             $rand = rand(1, 99999999999);
             wp_enqueue_script(
                 'em-Inpsyde-Jsonplaceholder-Scripts',
-                plugin_dir_url(__FILE__)
-                . 'assets/general.js',
+                EM_Inpsyde_Jsonplaceholder_Constants_URL
+                . 'public/js/general.js',
                 ['jquery'],
                 $rand,
                 true
             );
             wp_enqueue_style(
                 'em-Inpsyde-Jsonplaceholder-Styles',
-                plugin_dir_url(__FILE__)
-                . 'assets/style.css',
+                EM_Inpsyde_Jsonplaceholder_Constants_URL
+                . 'public/css/style.css',
                 [],
                 $rand
             );
