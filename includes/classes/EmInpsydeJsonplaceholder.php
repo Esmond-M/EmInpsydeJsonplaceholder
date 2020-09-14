@@ -92,7 +92,7 @@ if (!class_exists('EmInpsydeJsonplaceholder')) {
             wp_enqueue_script(
                 'em-Inpsyde-Jsonplaceholder-Scripts',
                 EM_Inpsyde_Jsonplaceholder_Constants_URL
-                . 'public/js/general.js',
+                . 'public/js/general.min.js',
                 ['jquery'],
                 $rand,
                 true
